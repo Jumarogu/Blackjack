@@ -30,15 +30,15 @@ public class Baraja {
 		
 	}
 	
-	public Naipe next(){
+	/*public Naipe next(){
 		
-	}
+	}*/
 }
 
 
 /*Baraja
 - baraja: Naipe[ ]
-- posicion: int (indica cuál carta de la baraja se está dando)
+- posicion: int (indica cuï¿½l carta de la baraja se estï¿½ dando)
 + Constructor default
 + mezclar( ): void
 + next( ): Naipe*/

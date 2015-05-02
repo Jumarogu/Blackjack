@@ -1,3 +1,5 @@
+import java.awt.Image;
+
 import javax.swing.ImageIcon;
 
 
@@ -6,6 +8,7 @@ public class Naipe{
 	private static final String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
 	private static final String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
 	private static final ImageIcon[][] naipesImg = new ImageIcon[3][12];
+	private Image[] img = new Image[10];
 	private int figura;
 	private int valor;
 	
@@ -15,7 +18,9 @@ public class Naipe{
 		for (int i = 0; i < naipesImg.length; i++) {
 			for (int j = 0; j < naipesImg[i].length; j++) {
 				if(i == 0){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Corazon/"+j+1+".png");
+					String v = "Cartas ";
+					
+					this.naipesImg[i][j] = new ImageIcon("Cartas/Corazones/"+j+1+".png");
 				}
 				else if(i == 1){
 					this.naipesImg[i][j] = new ImageIcon("Cartas/Diamante/"+j+1+".png");
