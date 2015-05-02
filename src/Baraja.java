@@ -32,31 +32,13 @@ public class Baraja {
 			i++;
 		}
 		posicion = -1;
-		
-		
-		
-		
 	}
-	
-<<<<<<< HEAD
-	/*public Naipe next(){
-=======
-	public Naipe next(){
-		posicion++;
-		return baraja[posicion];
-	
->>>>>>> origin/master
 		
-	}*/
+		public Naipe next(){
+			posicion++;
+			return baraja[posicion];
+				
+			
+					
+		}
 }
-<<<<<<< HEAD
-
-
-/*Baraja
-- baraja: Naipe[ ]
-- posicion: int (indica cu�l carta de la baraja se est� dando)
-+ Constructor default
-+ mezclar( ): void
-+ next( ): Naipe*/
-=======
->>>>>>> origin/master
