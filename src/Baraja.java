@@ -1,18 +1,24 @@
 import java.util.*;
 public class Baraja {
 	
-	private Naipe baraja[], carta;
-	private int posicion, carta1,carta2;
 	
-	public Baraja (){
-		baraja = new Naipe [52];
-		posicion = 0;
-		
+	private Naipe baraja[], carta;
+	private int posicion = 0;
+	private int carta1,carta2;
+	
+	public Baraja () {
+		for(int i = 0; i<4; i++){
+			for(int j = 0; j < 13; j++){
+				baraja[posicion] = new Naipe(i,j);
+				posicion ++;
+			}
+		}
 		
 	}
 	
 	public void mezclar(){
 		int i = 0;
+		
 		
 		while (i<52){
 			
@@ -25,20 +31,17 @@ public class Baraja {
 			
 			i++;
 		}
+		posicion = -1;
+		
 		
 		
 		
 	}
 	
 	public Naipe next(){
+		posicion++;
+		return baraja[posicion];
+	
 		
 	}
 }
-
-
-/*Baraja
-- baraja: Naipe[ ]
-- posicion: int (indica cuál carta de la baraja se está dando)
-+ Constructor default
-+ mezclar( ): void
-+ next( ): Naipe*/
