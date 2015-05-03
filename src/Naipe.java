@@ -5,30 +5,32 @@ import javax.swing.ImageIcon;
 
 public class Naipe{
 	
-	private static final String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
-	private static final String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
-	private static final Image[][] naipesImg = new Image[3][12];
+	private String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
+	private String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
+	private Image[][] naipesImg = new Image[3][12];
+	private Image naipe;
 	private int figura;
 	private int valor;
 	
 	public Naipe(int figura, int valor){
 		this.valor = valor;
+		this.naipe = new ImageIcon("/Cartas/Corazones/1.png").getImage();
 		this.figura = figura;
 		for (int i = 0; i < naipesImg.length; i++) {
 			for (int j = 0; j < naipesImg[i].length; j++) {
 				if(i == 0){
 					String v = "Cartas ";
 					
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Corazones/"+j+1+".png").getImage();
+					this.naipesImg[i][j] = new ImageIcon(j+1+"c.png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Diamante/"+j+1+".png").getImage();
+					this.naipesImg[i][j] = new ImageIcon(j+1+"d.png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Trebol/"+j+1+".png").getImage();
+					this.naipesImg[i][j] = new ImageIcon(j+1+"t.png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Picas/"+j+1+".png").getImage();
+					this.naipesImg[i][j] = new ImageIcon(j+1+"p.png").getImage();
 				}
 			}
 		}
