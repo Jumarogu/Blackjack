@@ -34,11 +34,8 @@ public class Baraja {
 		posicion = -1;
 	}
 		
-		public Naipe next(){
-			posicion++;
-			return baraja[posicion];
-				
-			
-					
-		}
+	public Naipe next(){
+		posicion++;
+		return baraja[posicion];			
+	}
 }
