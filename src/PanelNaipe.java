@@ -1,6 +1,7 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 
