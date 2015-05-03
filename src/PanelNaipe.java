@@ -9,14 +9,12 @@ public class PanelNaipe extends JPanel{
 	public PanelNaipe(Naipe n){
 		super();
 		this.setSize(new Dimension(500, 500));
-		
-		
 		this.n = n;
 		
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-		n.getImage().paintIcon(this, g, 0, 0);
+		g.drawImage(n.getImage(), 10, 10, null);
 		g.drawRect(0, 0, 10, 10);
 	}
 }

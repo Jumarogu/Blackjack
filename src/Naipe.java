@@ -7,8 +7,7 @@ public class Naipe{
 	
 	private static final String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
 	private static final String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
-	private static final ImageIcon[][] naipesImg = new ImageIcon[3][12];
-	private Image[] img = new Image[10];
+	private static final Image[][] naipesImg = new Image[3][12];
 	private int figura;
 	private int valor;
 	
@@ -20,16 +19,16 @@ public class Naipe{
 				if(i == 0){
 					String v = "Cartas ";
 					
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Corazones/"+j+1+".png");
+					this.naipesImg[i][j] = new ImageIcon("Cartas/Corazones/"+j+1+".png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Diamante/"+j+1+".png");
+					this.naipesImg[i][j] = new ImageIcon("Cartas/Diamante/"+j+1+".png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Trebol/"+j+1+".png");
+					this.naipesImg[i][j] = new ImageIcon("Cartas/Trebol/"+j+1+".png").getImage();
 				}
 				else if(i == 1){
-					this.naipesImg[i][j] = new ImageIcon("Cartas/Picas/"+j+1+".png");
+					this.naipesImg[i][j] = new ImageIcon("Cartas/Picas/"+j+1+".png").getImage();
 				}
 			}
 		}
@@ -38,7 +37,7 @@ public class Naipe{
 		String v = "Carta " +this.valores[this.valor] + " " + this.figuras[this.figura];
 		return v;
 	}
-	public ImageIcon getImage(){
+	public Image getImage(){
 		return this.naipesImg[this.figura][this.valor];
 	}
 	public int getValor(){
