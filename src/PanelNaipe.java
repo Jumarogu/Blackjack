@@ -15,7 +15,7 @@ public class PanelNaipe extends JPanel{
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-		g.drawImage(n.getImage(), 10, 10, null);
-		g.drawRect(0, 0, 10, 10);
+		g.drawImage(n.getImage(), 0, 0, n.getImage().getWidth(null), n.getImage().getHeight(null), null);
+
 	}
 }
