@@ -12,26 +12,6 @@ public class Player {
 		this.perdio = false;
 		this.juego = new Naipe[11];
 	}
-	
-	/*
-	 * Jugador
-- saldo: int.
-- nombre: String.
-- perdio: boolean.
-- juego: Naipe[ ] (Las cartas que va teniendo el jugador).
-+ Constructor
-+ getters para los primeros 3 atributos.
-+ getTotal( ): Regresa la suma de puntos que lleva en ese momento el jugador en función de las cartas que
-tiene).
-+ ganoPartida( ): void (Este método lo mandan a llamar para indicarle al jugador que ganó esta partida y
-modifica la cantidad de dinero disponible).
-+ perdioPartida( ) void (Este método lo mandan a llamar para indicarle al jugador que perdió esta partida
-y modifica la cantidad de dinero disponible).
-+ empatóPartida( ): void (Este método lo mandan a llamar para indicarle al jugador que empató esta
-partida y modifica la cantidad de dinero disponible).
-+ otraCarta( ): boolean, (Regresa si el jugador quiere otra carta o no)
-+ isBlackjack( ): boolean (Regresa si el jugador tiene un blackjack)
-	 */
 	public int getTotal(){
 		int total = 0;
 		for (int i = 0; i < this.juego.length; i++) {
