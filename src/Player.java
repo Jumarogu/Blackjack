@@ -5,6 +5,7 @@ public class Player {
 	private String nombre;
 	private boolean perdio;
 	private Naipe[] juego;
+	private int numeroCartas = 0;
 	
 	public Player (String nombre, int saldo){
 		this.nombre = nombre;
@@ -67,5 +68,13 @@ public class Player {
 		return this.saldo;
 	}
 
+	public void recibirCartas(Naipe n1){
+		
+		if(numeroCartas < 11){
+			juego[numeroCartas] = n1;
+			numeroCartas++;
+		}
+		
+	}
 	
 }
