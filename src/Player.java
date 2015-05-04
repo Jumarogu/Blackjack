@@ -12,6 +12,7 @@ public class Player {
 		this.perdio = false;
 		this.juego = new Naipe[11];
 	}
+	
 	public int getTotal(){
 		int total = 0;
 		for (int i = 0; i < this.juego.length; i++) {
