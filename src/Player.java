@@ -1,71 +1,92 @@
-import javax.swing.JOptionPane;
 
 
 public class Player {
 	private int saldo;
 	private String nombre;
 	private boolean perdio;
-	private Naipe juego[];
+	private Naipe[] juego;
 	
-	public Player (){
-		nombre = JOptionPane.showInputDialog("Introduce the name of the player");
-		saldo = 1000;
-		perdio = false;
-		
-		
+	public Player (String nombre, int saldo){
+		this.nombre = nombre;
+		this.saldo = saldo;
+		this.perdio = false;
+		this.juego = new Naipe[11];
 	}
 	
+	/*
+	 * Jugador
+- saldo: int.
+- nombre: String.
+- perdio: boolean.
+- juego: Naipe[ ] (Las cartas que va teniendo el jugador).
++ Constructor
++ getters para los primeros 3 atributos.
++ getTotal( ): Regresa la suma de puntos que lleva en ese momento el jugador en funci√≥n de las cartas que
+tiene).
++ ganoPartida( ): void (Este m√©todo lo mandan a llamar para indicarle al jugador que gan√≥ esta partida y
+modifica la cantidad de dinero disponible).
++ perdioPartida( ) void (Este m√©todo lo mandan a llamar para indicarle al jugador que perdi√≥ esta partida
+y modifica la cantidad de dinero disponible).
++ empat√≥Partida( ): void (Este m√©todo lo mandan a llamar para indicarle al jugador que empat√≥ esta
+partida y modifica la cantidad de dinero disponible).
++ otraCarta( ): boolean, (Regresa si el jugador quiere otra carta o no)
++ isBlackjack( ): boolean (Regresa si el jugador tiene un blackjack)
+	 */
 	public int getTotal(){
-		return 1;  
+		int total = 0;
+		for (int i = 0; i < this.juego.length; i++) {
+			if(this.juego[i] != null){
+				total += this.juego[i].getValor();
+			}
+		}
+		return total;  
 	}
 	
-	public void ganoPartida(){
-		/*+ ganoPartida( ): void (Este mÈtodo lo mandan a llamar para indicarle al jugador que ganÛ esta partida y
+	public void ganoPartida(int apuesta){
+		this.saldo += apuesta*2;
+		/*+ ganoPartida( ): void (Este mÔøΩtodo lo mandan a llamar para indicarle al jugador que ganÔøΩ esta partida y
 		modifica la cantidad de dinero disponible).*/
-		
-		
-		
-		
 	}
 	
-	public void perdioPartida(){
-		
-		/*+ perdioPartida( ) void (Este mÈtodo lo mandan a llamar para indicarle al jugador que perdiÛ esta partida
+	public void perdioPartida(int apuesta){
+		if(this.saldo == 0){
+			this.perdio = true;
+		}
+		/*+ perdioPartida( ) void (Este mÔøΩtodo lo mandan a llamar para indicarle al jugador que perdiÔøΩ esta partida
 		y modifica la cantidad de dinero disponible).*/
-		
-		
 	}
 	
-	public void empatoPartida(){
-		/*+ empatÛPartida( ): void (Este mÈtodo lo mandan a llamar para indicarle al jugador que empatÛ esta
+	public void empatoPartida(int apuesta){
+		this.saldo += apuesta;
+		/*+ empatÔøΩPartida( ): void (Este mÔøΩtodo lo mandan a llamar para indicarle al jugador que empatÔøΩ esta
 		partida y modifica la cantidad de dinero disponible).*/
-		
-		
-		
 	}
 	
 	public boolean otraCarta(){
-		return false;
-		
+		boolean naipe = false;
+		if(this.getTotal() < 21){
+			naipe = true;
+		}
+		return naipe;
 	}
 	
 	public boolean isBlackJack(){
-		return true;
+		boolean black = false;
+		if(this.getTotal() == 21){
+			black = true;
+		}
+		return black;
 	}
 
 	public boolean getPerdio() {
-		return perdio;
+		return this.perdio;
 	}
-
-	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
-
-	
 
 	public int getSaldo() {
-		return saldo;
+		return this.saldo;
 	}
 
 	
