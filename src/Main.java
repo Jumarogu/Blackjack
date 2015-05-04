@@ -14,6 +14,7 @@ public class Main {
 			JOptionPane.showMessageDialog(null, "El maximo numero de jugadores son 4");
 			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		}
+		
 		System.out.println(numPlayers);
 		Player[] p = new Player[numPlayers];
 		for (int i = 0; i < numPlayers; i++) {	
