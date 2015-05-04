@@ -1,21 +1,21 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
-
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-
 public class PanelNaipe extends JPanel{
-	private Naipe n;
-	public PanelNaipe(Naipe n){
+
+	private Baraja b;
+	public PanelNaipe(Baraja n){
 		super();
 		this.setSize(new Dimension(500, 500));
-		this.n = n;
+		this.b = n;
 		
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-		g.drawImage(n.getImage(), 0, 0, n.getImage().getWidth(null), n.getImage().getHeight(null), null);
-
+		for (int i = 0; i < 52; i++) {
+			g.drawImage(b.next().getImage(), i+5, i+10, null);
+			System.out.println(i);
+		}
 	}
 }

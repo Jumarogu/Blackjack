@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 
 public class Frame extends JFrame{
 	private PanelNaipe pn;
+	
 	public Frame(PanelNaipe pn){
 		super("blackjack");
 		this.pn = pn;
