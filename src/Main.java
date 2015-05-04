@@ -24,12 +24,12 @@ public class Main {
 		}
 		Blackjack bj = new Blackjack(p, apuestas);
 		
-		while(){
+	//	while(){
 			
 			
 			
 			
-		}
+		//}
 		
 		System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		
