@@ -8,11 +8,11 @@ public class Main {
 		int numPlayers;
 		int[] apuestas = new int[4];
 		int tope;
-		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el número de jugadores.", "1 - 4"));
+		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
 		if(numPlayers > 4){
-			JOptionPane.showMessageDialog(null, "El màximo numero de jugadores son 4");
-			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el número de jugadores.", "1 - 4"));
+			JOptionPane.showMessageDialog(null, "El maximo numero de jugadores son 4");
+			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		}
 		System.out.println(numPlayers);
 		Player[] p = new Player[numPlayers];
@@ -23,6 +23,13 @@ public class Main {
 			p[i] = new Player(name, saldo);
 		}
 		Blackjack bj = new Blackjack(p, apuestas);
+		
+		while(){
+			
+			
+			
+			
+		}
 		
 		System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		

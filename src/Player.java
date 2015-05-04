@@ -12,6 +12,7 @@ public class Player {
 		this.perdio = false;
 		this.juego = new Naipe[11];
 	}
+	
 	public int getTotal(){
 		int total = 0;
 		for (int i = 0; i < this.juego.length; i++) {
@@ -24,22 +25,19 @@ public class Player {
 	
 	public void ganoPartida(int apuesta){
 		this.saldo += apuesta*2;
-		/*+ ganoPartida( ): void (Este m�todo lo mandan a llamar para indicarle al jugador que gan� esta partida y
-		modifica la cantidad de dinero disponible).*/
+	
 	}
 	
 	public void perdioPartida(int apuesta){
 		if(this.saldo == 0){
 			this.perdio = true;
 		}
-		/*+ perdioPartida( ) void (Este m�todo lo mandan a llamar para indicarle al jugador que perdi� esta partida
-		y modifica la cantidad de dinero disponible).*/
+		
 	}
 	
 	public void empatoPartida(int apuesta){
 		this.saldo += apuesta;
-		/*+ empat�Partida( ): void (Este m�todo lo mandan a llamar para indicarle al jugador que empat� esta
-		partida y modifica la cantidad de dinero disponible).*/
+		
 	}
 	
 	public boolean otraCarta(){
