@@ -52,10 +52,11 @@ public class Main {
 			jugadorActual = 0;
 			
 			for(int j = 0; j<numPlayers; j++){
+				
 				apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog("Apuesta del jugador " + bj.getPlayer(j).getNombre()));
 				
 				if(apuestas[j]>player[j].getSaldo()){
-					apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog(" No tiene saldo disponible para realizar esa apuesta, introduzca una nueva "));
+					apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog(" No tiene saldo disponible para realizar esta apuesta, introduzca una nueva "));
 				}
 			}	
 			
@@ -103,9 +104,8 @@ public class Main {
 				}
 				
 				if(player[h].getTotal()> 21 && d.getPerdio()){
-					
 					player[h].empatoPartida(apuestas[h]);
-					JOptionPane.showMessageDialog(null, " El jugador" + h + " empato con el dealer : " + apuestas[h]);
+					JOptionPane.showMessageDialog(null, " El jugador " + h + " empato con el dealer : " + apuestas[h]);
 
 				} else if(player[h].getTotal() == d.getTotal()){
 					player[h].ganoPartida(apuestas[h]);
@@ -113,13 +113,15 @@ public class Main {
 
 				}else if(player[h].getTotal() <= 21 && player[h].getTotal() > d.getTotal() && !d.getPerdio() ){
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "gano contra el dealer: " + apuestas[h]);
-
+					player[h].ganoPartida(apuestas[h]);
 				}else if (d.getPerdio() && player[h].getTotal()<=21){
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "gano contra el dealer: " + apuestas[h]);
+					player[h].ganoPartida(apuestas[h]);
+					
 
 				} else {
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "perdio contra el dealer: " + apuestas[h]);
-
+					player[h].perdioPartida(apuestas[h]);
 				}
 				
 			}
