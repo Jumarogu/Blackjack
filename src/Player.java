@@ -67,6 +67,9 @@ public class Player {
 	public int getSaldo() {
 		return this.saldo;
 	}
+	public Naipe[] getJuego(){
+		return this.juego;
+	}
 
 	public void recibirCartas(Naipe n1){
 		
