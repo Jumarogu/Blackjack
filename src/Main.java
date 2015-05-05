@@ -75,7 +75,7 @@ public class Main {
 			bj.otraCarta(4);
 			
 			while(bj.otraCartaDealer()){
-				
+				bj.otraCarta(4);
 			}
 			
 			for(int h = 0; h< numPlayers; h++ ){
