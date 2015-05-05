@@ -51,7 +51,4 @@ public class Dealer extends Player {
 	public int getSaldo() {
 		return this.saldo;
 	}
-
-
-	
 }

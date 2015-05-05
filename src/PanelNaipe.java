@@ -13,6 +13,7 @@ public class PanelNaipe extends JPanel{
 	}
 	public void paint(Graphics g){
 		super.paint(g);
+		this.imprimeTablero(g);
 		for (int i = 0; i < 4; i++) {
 			
 			g.drawImage(bj.getBaraja().next().getImage(), i+5, i+10, null);
@@ -21,5 +22,8 @@ public class PanelNaipe extends JPanel{
 			}
 			System.out.println(i);
 		}
+	}
+	public void imprimeTablero(Graphics g){
+		g.fillOval(0, this.getHeight(), this.getWidth(), this.getWidth());
 	}
 }
