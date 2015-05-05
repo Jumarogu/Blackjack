@@ -16,14 +16,16 @@ public class Main {
 		}
 		
 		System.out.println(numPlayers);
-		Player[] p = new Player[numPlayers];
+		Player[] p = new Player[4];
 		for (int i = 0; i < numPlayers; i++) {	
 			String name = JOptionPane.showInputDialog("Nombre del jugador " + (i+1));
 			int saldo = Integer.parseInt(JOptionPane.showInputDialog("El saldo del jugador " + (i+1)));
 			apuestas[i] = Integer.parseInt(JOptionPane.showInputDialog("Apuesta del jugador " + (i+1)));
 			p[i] = new Player(name, saldo);
 		}
-		Blackjack bj = new Blackjack(p, apuestas);
+		Baraja b = new Baraja();
+		b.mezclar();
+		Blackjack bj = new Blackjack(p, apuestas, b);
 		
 		//while(){
 			
@@ -35,11 +37,9 @@ public class Main {
 		System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		
 		Naipe n1 = new Naipe(2, 9);
-		Baraja b = new Baraja();
-		b.mezclar();
 		System.out.println(n1.getValor());
 		System.out.println(n1.toString());
-		PanelNaipe n = new PanelNaipe(b);
+		PanelNaipe n = new PanelNaipe(bj);
 		Frame f = new Frame(n);
 		f.setVisible(true);
 	}

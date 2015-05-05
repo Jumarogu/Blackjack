@@ -4,17 +4,21 @@ import javax.swing.JPanel;
 
 public class PanelNaipe extends JPanel{
 
-	private Baraja b;
-	public PanelNaipe(Baraja n){
+	private Blackjack bj;
+	public PanelNaipe(Blackjack bj){
 		super();
 		this.setSize(new Dimension(500, 500));
-		this.b = n;
+		this.bj = bj;
 		
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-		for (int i = 0; i < 52; i++) {
-			g.drawImage(b.next().getImage(), i+5, i+10, null);
+		for (int i = 0; i < 4; i++) {
+			
+			g.drawImage(bj.getBaraja().next().getImage(), i+5, i+10, null);
+			if(this.bj.getPlayer(i) != null){	
+				g.drawString(this.bj.getPlayer(i).getNombre(), 300, 300);
+			}
 			System.out.println(i);
 		}
 	}
