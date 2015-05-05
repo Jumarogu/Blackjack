@@ -13,9 +13,13 @@ public class Blackjack {
 	}
 	
 	public void repartirCartas(){
+	
 		for (int i = 0; i < p.length; i++){
 			for(int j = 0; j < 2 ; j++){
-				p[i].recibirCartas(b.next());
+				if(p[i]!= null){
+					
+					p[i].recibirCartas(b.next());
+				}
 			}
 		}
 		

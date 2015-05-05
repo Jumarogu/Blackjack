@@ -10,9 +10,10 @@ public class Main {
 		int numPlayers;
 		int[] apuestas = new int[4];
 		int tope;
-		int masRicachon;
+		int masRicachon = 0;
 		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
+
 		if(numPlayers > 4){
 			JOptionPane.showMessageDialog(null, "El maximo numero de jugadores son 4");
 			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
@@ -27,6 +28,7 @@ public class Main {
 		Baraja baraja = new Baraja();
 		baraja.mezclar();
 		Blackjack bj = new Blackjack(player, apuestas, baraja);
+		bj.repartirCartas();
 		
 		//System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		//Naipe n1 = new Naipe(2, 9);
@@ -36,10 +38,11 @@ public class Main {
 		Frame f = new Frame(n);
 		f.setVisible(true);
 		
-		//while (){
+		while (masRicachon < tope){
 			
 			
-		//}
+			
+		}
 		
 	}
 
