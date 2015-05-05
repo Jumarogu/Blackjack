@@ -9,6 +9,8 @@ public class PanelNaipe extends JPanel{
 
 	private Blackjack bj;
 	private Image img;
+	private boolean bool;
+	private int aumento;
 	public PanelNaipe(Blackjack bj){
 		super();
 		this.img = new ImageIcon("background.jpg").getImage();
@@ -18,69 +20,81 @@ public class PanelNaipe extends JPanel{
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-		g.drawImage(img, 0, 0, null);
+		this.nuevoTablero(g);
 		this.pintaCarta(g);
+	}
+	public void nuevoTablero(Graphics g){
+		this.aumento = 20;
+		g.drawImage(img, 0, 0, null);
 	}
 	public void pintaCarta(Graphics g){
 		int j = 0;
-		int aumento = 20;
+		System.out.println("estoy en pinta carta");
+		if(!this.bool){
+			this.nuevoTablero(g);
+			System.out.println("lo intenté");
+		}
+		
 		for (int i = 0; i < 4; i++) {
 			if(bj.getPlayer(i) != null){
 				if(i == 0){
 					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 205 + aumento, 407, null);
-							aumento += 10;
+							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 205 + this.aumento, 407, null);
+							this.aumento += 10;
 							j++;
 						}
 					}
-					aumento = 20;
+					this.aumento = 20;
 				}
 				else if(i == 1){
 					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 489 + aumento, 456, null);
-							aumento += 10;
+							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 489 + this.aumento, 456, null);
+							this.aumento += 10;
 							j++;
 						}
 					}
-					aumento = 20;
+					this.aumento = 20;
 				}
 				else if(i == 2){
 					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 811 + aumento, 468, null);
-							aumento += 10;
+							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 811 + this.aumento, 468, null);
+							this.aumento += 10;
 							j++;
 						}
 					}
-					aumento = 20;
+					this.aumento = 20;
 				}
 				else if(i == 3){
 					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 1116 + aumento, 410, null);
-							aumento += 10;
+							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 1116 + this.aumento, 410, null);
+							this.aumento += 10;
 							j++;
 						}
 					}
-					aumento = 20;
+					this.aumento = 20;
 				}
 			}
 			j = 0;
 			for (int k = 0; k < 4; k++) {
 				if(this.bj.getDealer().getJuego()[j] != null){
 					System.out.println("HOLA");
-					g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + aumento, 173, null);
-					aumento += 10;
+					g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + this.aumento, 173, null);
+					this.aumento += 10;
 					j++;
 				}
 			}
-			aumento = 20;
+			this.aumento = 20;
 		}
+	}
+	public void setBoolean(boolean t){
+		this.bool = t;
 	}
 }

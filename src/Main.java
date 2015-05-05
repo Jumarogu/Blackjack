@@ -42,7 +42,7 @@ public class Main {
 		
 		while (masRicachon < tope){
 			contador = 0;
-			
+			n.setBoolean(true);
 			if(contador == 3){
 				bj.mezclarBJ();
 			}
@@ -77,6 +77,7 @@ public class Main {
 			
 			while(bj.otraCartaDealer()){
 				bj.otraCarta(4);
+				n.repaint();
 			}
 			
 			for(int h = 0; h< numPlayers; h++ ){
@@ -101,6 +102,8 @@ public class Main {
 				}
 				
 			}
+			n.setBoolean(false);
+			n.repaint();
 			
 			bj.borrar(numPlayers);
 			
