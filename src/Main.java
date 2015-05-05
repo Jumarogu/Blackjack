@@ -74,7 +74,7 @@ public class Main {
 			bj.otraCarta(4);
 			
 			while(bj.otraCartaDealer()){
-				s
+				
 			}
 			
 			for(int h = 0; h< numPlayers; h++ ){
@@ -83,7 +83,7 @@ public class Main {
 					player[h].ganoPartida(apuestas[h]);
 				}
 				
-				if(player[h]){
+				if(player[h] == null){
 					
 				}
 				
