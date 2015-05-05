@@ -11,6 +11,8 @@ public class Main {
 		int[] apuestas = new int[4];
 		int tope;
 		int masRicachon = 0;
+		int jugadorActual;
+		int respuesta;
 		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
 
@@ -40,8 +42,21 @@ public class Main {
 		
 		while (masRicachon < tope){
 			
+			jugadorActual = 0;
 			
-			if(JOptionPane.showConfirmDialog()){
+			while (jugadorActual<numPlayers){
+				
+				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + jugadorActual + " Diga si quiere otra carta");
+					
+				if(respuesta == JOptionPane.YES_OPTION){
+					bj.otraCarta(jugadorActual);	
+					
+				}else if (respuesta == JOptionPane.NO_OPTION){
+					jugadorActual++;
+				}else if (respuesta == JOptionPane.OK_CANCEL_OPTION){
+					respuesta = JOptionPane.showConfirmDialog(null, "Jugador: " + jugadorActual + " Diga si quiere otra carta");
+				}
+				
 				
 			}
 			

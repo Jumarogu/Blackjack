@@ -24,6 +24,22 @@ public class Blackjack {
 		}
 		
 	}
+	
+	public void otraCarta(int i){
+		
+		if (i == 0){
+			p[0].recibirCartas(b.next());
+		}else if (i == 1){
+			p[1].recibirCartas(b.next());
+			
+		}else if(i == 2){
+			p[2].recibirCartas(b.next());
+			
+		}else if (i== 3){
+			p[3].recibirCartas((b.next()));
+		}
+		
+	}
 	public Baraja getBaraja(){
 		return this.b;
 	}
