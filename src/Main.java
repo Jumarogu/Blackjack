@@ -41,6 +41,9 @@ public class Main {
 		while (masRicachon < tope){
 			
 			
+			if(JOptionPane.showConfirmDialog()){
+				
+			}
 			
 		}
 		
