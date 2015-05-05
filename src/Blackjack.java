@@ -4,6 +4,7 @@ public class Blackjack {
 	private Dealer d;
 	private int[] apuesta; // aqui tengo las apuestas de todos los jugadores
 	private Baraja b;
+	private int mayorSaldo;
 	
 	public Blackjack(Player[] p, int[] apuesta, Baraja b, Dealer d){
 		this.p = p;
@@ -76,5 +77,22 @@ public class Blackjack {
 		}
 		
 	}
+	
+	public int masRicachon(){
+		mayorSaldo = p[0].getSaldo();
+		
+		for(int i = 0; i < 3;i++){
+			
+			if(p[i+1] != null){
+				if(p[i+1].getSaldo() > mayorSaldo){
+					mayorSaldo = p[i+1].getSaldo();
+				}
+			}
+		}
+		
+		return mayorSaldo;
+	}
+	
+	
 }
 

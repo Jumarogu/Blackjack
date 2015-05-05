@@ -9,6 +9,7 @@ public class Dealer extends Player {
 	public Dealer(){
 		super("Dealer", 100000);
 		juego = new Naipe[11];
+		numeroCartas = 0;
 	}
 	
 	public int getTotal(){

@@ -32,7 +32,7 @@ public class PanelNaipe extends JPanel{
 		System.out.println("estoy en pinta carta");
 		if(!this.bool){
 			this.nuevoTablero(g);
-			System.out.println("lo intenté");
+			System.out.println("lo intente");
 		}
 		
 		for (int i = 0; i < 4; i++) {
