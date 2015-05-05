@@ -4,6 +4,7 @@ public class Dealer extends Player {
 	private int saldo;
 	private boolean perdio;
 	private Naipe[] juego;
+	private int numeroCartas;
 	
 	public Dealer(){
 		super("Dealer", 100000);
@@ -30,7 +31,7 @@ public class Dealer extends Player {
 	
 	public boolean otraCarta(){
 		boolean naipe = false;
-		if(this.getTotal() < 21){
+		if(this.getTotal() < 17){
 			naipe = true;
 		}
 		return naipe;
@@ -51,4 +52,14 @@ public class Dealer extends Player {
 	public int getSaldo() {
 		return this.saldo;
 	}
+	
+	public void recibirCartas(Naipe n1){
+		
+		if(numeroCartas < 11){
+			juego[numeroCartas] = n1;
+			numeroCartas++;
+		}
+		
+	}
+	
 }

@@ -13,12 +13,12 @@ public class Main {
 		int masRicachon = 0;
 		int jugadorActual;
 		int respuesta, contador;
-		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
+		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
 
 		if(numPlayers > 4){
 			JOptionPane.showMessageDialog(null, "El maximo numero de jugadores son 4");
-			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
+			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el numero de jugadores.", "1 - 4"));
 		}
 		Player[] player = new Player[4];
 		for (int i = 0; i < numPlayers; i++) {	
@@ -30,7 +30,6 @@ public class Main {
 		Baraja baraja = new Baraja();
 		baraja.mezclar();
 		Blackjack bj = new Blackjack(player, apuestas, baraja);
-		
 		
 		//System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		//Naipe n1 = new Naipe(2, 9);
@@ -44,7 +43,7 @@ public class Main {
 			contador = 0;
 			
 			if(contador == 3){
-				
+				bj.mezclarBJ();
 			}
 			bj.repartirCartas();
 			jugadorActual = 0;
@@ -70,7 +69,24 @@ public class Main {
 				
 			}
 			
-			System.out.println("jajajaja4");
+			bj.otraCarta(4);
+			bj.otraCarta(4);
+			
+			while(bj.otraCartaDealer()){
+				s
+			}
+			
+			for(int h = 0; h< numPlayers; h++ ){
+				
+				if(player[h].isBlackJack()){
+					player[h].ganoPartida(apuestas[h]);
+				}
+				
+				if(player[h]){
+					
+				}
+				
+			}
 			
 			
 			

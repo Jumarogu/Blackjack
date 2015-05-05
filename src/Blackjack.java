@@ -37,9 +37,13 @@ public class Blackjack {
 			
 		}else if (i== 3){
 			p[3].recibirCartas((b.next()));
+		}else if (i == 4){
+			d.recibirCartas(b.next());
 		}
 		
 	}
+	
+	
 	public Baraja getBaraja(){
 		return this.b;
 	}
@@ -54,6 +58,14 @@ public class Blackjack {
 		}
 		return true;
 		
+	}
+	
+	public boolean otraCartaDealer(){
+		return d.otraCarta();
+	}
+	
+	public void mezclarBJ(){
+		this.b.mezclar();
 	}
 }
 
