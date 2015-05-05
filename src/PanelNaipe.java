@@ -14,7 +14,7 @@ public class PanelNaipe extends JPanel{
 	public void paint(Graphics g){
 		super.paint(g);
 		for (int i = 0; i < 52; i++) {
-			g.drawImage(b.next().getImage(), i+5, i+10, null);
+			//g.drawImage(b.next().getImage(), i+5, i+10, null);
 			System.out.println(i);
 		}
 	}

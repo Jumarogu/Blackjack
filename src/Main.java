@@ -25,7 +25,7 @@ public class Main {
 		}
 		Blackjack bj = new Blackjack(p, apuestas);
 		
-	//	while(){
+		//while(){
 			
 			
 			
