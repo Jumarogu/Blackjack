@@ -49,8 +49,6 @@ public class Main {
 			bj.repartirCartas();
 			jugadorActual = 0;
 			
-			
-			
 			while (jugadorActual<numPlayers){
 				
 				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + jugadorActual + " Diga si quiere otra carta");
@@ -82,20 +80,22 @@ public class Main {
 				
 				if(player[h].isBlackJack()){
 					player[h].ganoPartida(apuestas[h]);
-				}
-				
-				if(player[h] == null){
+					
+					JOptionPane.showMessageDialog(null, " El jugador: " + h + " gano contra el dealer: " + apuestas[h]);
 					
 				}
 				
+				if(player[h].getTotal()> 21 || player[h].getTotal() < d.getTotal()){
+					player[h].perdioPartida(apuestas[h]);
+					JOptionPane.showMessageDialog(null, " El jugador" + h + " perdio : " + apuestas[h]);
+
+				} else {
+					player[h].ganoPartida(apuestas[h]);
+					JOptionPane.showMessageDialog(null, " El jugador" + h + "gano contra el dealer: " + apuestas[h]);
+
+				}	
+				
 			}
-			
-			
-			
-			
-			
-			
-			
 			
 		}
 		
