@@ -12,7 +12,7 @@ public class Main {
 		int tope;
 		int masRicachon = 0;
 		int jugadorActual;
-		int respuesta;
+		int respuesta, contador;
 		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
 
@@ -30,7 +30,7 @@ public class Main {
 		Baraja baraja = new Baraja();
 		baraja.mezclar();
 		Blackjack bj = new Blackjack(player, apuestas, baraja);
-		bj.repartirCartas();
+		
 		
 		//System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		//Naipe n1 = new Naipe(2, 9);
@@ -41,8 +41,15 @@ public class Main {
 		f.setVisible(true);
 		
 		while (masRicachon < tope){
+			contador = 0;
 			
+			if(contador == 3){
+				
+			}
+			bj.repartirCartas();
 			jugadorActual = 0;
+			
+			
 			
 			while (jugadorActual<numPlayers){
 				
@@ -50,15 +57,27 @@ public class Main {
 					
 				if(respuesta == JOptionPane.YES_OPTION){
 					bj.otraCarta(jugadorActual);	
-					
+					if(bj.sePaso(jugadorActual)){
+						jugadorActual++;
+					}
 					
 				}else if (respuesta == JOptionPane.NO_OPTION){
+					System.out.println("entre a la opcion no");
 					jugadorActual++;
 				}else if (respuesta == JOptionPane.OK_CANCEL_OPTION){
 					respuesta = JOptionPane.showConfirmDialog(null, "Jugador: " + jugadorActual + " Diga si quiere otra carta");
 				}
 				
 			}
+			
+			System.out.println("jajajaja4");
+			
+			
+			
+			
+			
+			
+			
 			
 		}
 		
