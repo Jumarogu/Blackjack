@@ -102,6 +102,10 @@ public class Main {
 				
 			}
 			
+			bj.borrar(numPlayers);
+			
+			
+			
 		}
 		
 	}

@@ -67,5 +67,14 @@ public class Blackjack {
 	public Dealer getDealer(){
 		return this.d;
 	}
+	
+	public void borrar(int i){
+		
+		for(int m = 0; m < i; i++){
+			p[m].borrarCartas();
+			
+		}
+		
+	}
 }
 

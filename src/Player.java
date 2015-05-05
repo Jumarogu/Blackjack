@@ -80,4 +80,8 @@ public class Player {
 		
 	}
 	
+	public void borrarCartas(){
+		this.juego = new Naipe[11];
+	}
+	
 }
