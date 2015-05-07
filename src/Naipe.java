@@ -32,26 +32,25 @@ public class Naipe{
 				}
 			}
 		}
+		if(this.valor == 0){
+			this.valor = 11;
+		}
+		else if(this.valor < 10){
+			this.valor += 1;
+		}
+		else if(this.valor >= 10){
+			this.valor = 10;
+		}
 	}
 	public String toString(){	
-		String v = "Carta " +this.valores[this.valor] + " " + this.figuras[this.figura];
+		String v = "Carta " + this.valor + " " + this.figuras[this.figura];
 		return v;
 	}
 	public Image getImage(){
-		System.out.println("Posicion del Naipe " + this.figura + ", " + this.valor);
+		System.out.println("Posicion del Naipe " + this.figuras[this.figura] + ", " + this.valor);
 		return this.naipesImg[this.figura][this.valor];
 	}
 	public int getValor(){
-		int j = 0;
-		if(this.valor == 0){
-			j = 11;
-		}
-		else if(this.valor < 10){
-			j = this.valor + 1;
-		}
-		else if(this.valor >= 10){
-			j = 10;
-		}
-		return j;
+		return this.valor;
 	}
 }

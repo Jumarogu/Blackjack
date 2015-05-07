@@ -14,8 +14,6 @@ public class Main {
 			JOptionPane.showMessageDialog(null, "El maximo numero de jugadores son 4");
 			numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introdusca el numero de jugadores.", "1 - 4"));
 		}
-		
-		System.out.println(numPlayers);
 		Player[] p = new Player[4];
 		for (int i = 0; i < numPlayers; i++) {	
 			String name = JOptionPane.showInputDialog("Nombre del jugador " + (i+1));
@@ -34,11 +32,11 @@ public class Main {
 			
 		//}
 		
-		System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
+		//System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		
-		Naipe n1 = new Naipe(2, 9);
-		System.out.println(n1.getValor());
-		System.out.println(n1.toString());
+		//Naipe n1 = new Naipe(2, 9);
+		//System.out.println(n1.getValor());
+		//System.out.println(n1.toString());
 		PanelNaipe n = new PanelNaipe(bj);
 		Frame f = new Frame(n);
 		f.setVisible(true);

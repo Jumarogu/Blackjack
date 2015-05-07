@@ -12,6 +12,7 @@ public class Baraja {
 				baraja[posicion] = new Naipe(i,j);
 				System.out.println("Naipe " + i + ", " + j);
 				posicion += 1;
+				System.out.println(posicion);
 			}
 		}
 		posicion = 0;
@@ -33,7 +34,7 @@ public class Baraja {
 	}
 		
 	public Naipe next(){
-		posicion++;
-		return baraja[posicion-1];
+		posicion += 1;
+		return baraja[posicion - 1];
 	}
 }
