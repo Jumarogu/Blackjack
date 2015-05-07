@@ -13,28 +13,17 @@ public class PanelNaipe extends JPanel{
 	}
 	public void paint(Graphics g){
 		super.paint(g);
-<<<<<<< HEAD
-=======
-
-		for (int i = 0; i < 52; i++) {
-			g.drawImage(b.next().getImage(), i+5, i+10, null);
-
->>>>>>> origin/master
+		
 		this.imprimeTablero(g);
-		for (int i = 0; i < 26 ; i++) {
-			g.drawImage(bj.getBaraja().next().getImage(), i+5, i+10, null);
-<<<<<<< HEAD
-			System.out.println("esta es i: " + i);
-=======
-			if(this.bj.getPlayer(i) != null){	
-				g.drawString(this.bj.getPlayer(i).getNombre(), 300, 300);
-			}
+		for (int i = 0; i < 4 ; i++) {
+			
 
-			System.out.println(i);
->>>>>>> origin/master
 		}
 	}
 	public void imprimeTablero(Graphics g){
+		if(this.bj.getPlayer(i) != null){	
+			g.drawString(this.bj.getPlayer(i).getNombre(), 300, 300);
+		}
 		g.fillOval(0,0, 100, 100);
 	}
 }
