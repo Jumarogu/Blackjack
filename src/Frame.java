@@ -9,7 +9,7 @@ public class Frame extends JFrame{
 	public Frame(PanelNaipe pn){
 		super("blackjack");
 		this.pn = pn;
-		this.setSize(1920, 1080);
+		this.setSize(1440, 812);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		this.add(pn, BorderLayout.CENTER);
 	}
