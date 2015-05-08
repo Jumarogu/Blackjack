@@ -5,10 +5,10 @@ public class Blackjack {
 	private int[] apuesta; // aqui tengo las apuestas de todos los jugadores
 	private Baraja b;
 	
-	public Blackjack(Player[] p, int[] apuesta, Baraja b){
+	public Blackjack(Player[] p, int[] apuesta, Baraja b, Dealer d){
 		this.p = p;
 		this.b = b;
-		this.d = new Dealer();
+		this.d = d;
 		this.apuesta = apuesta;
 	}
 	
@@ -63,6 +63,9 @@ public class Blackjack {
 	
 	public void mezclarBJ(){
 		this.b.mezclar();
+	}
+	public Dealer getDealer(){
+		return this.d;
 	}
 }
 

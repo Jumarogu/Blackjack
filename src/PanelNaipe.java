@@ -69,9 +69,17 @@ public class PanelNaipe extends JPanel{
 						}
 					}
 					aumento = 20;
-				}			
-				
+				}
 			}
+			j = 0;
+			for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
+				if(this.bj.getPlayer(i).getJuego()[k] != null){
+					g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + aumento, 173, null);
+					aumento += 10;
+					j++;
+				}
+			}
+			aumento = 20;
 		}
 	}
 }

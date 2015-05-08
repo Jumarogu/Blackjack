@@ -13,6 +13,7 @@ public class Main {
 		int masRicachon = 0;
 		int jugadorActual;
 		int respuesta, contador;
+		Dealer d = new Dealer();
 		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
 
@@ -29,7 +30,7 @@ public class Main {
 		}
 		Baraja baraja = new Baraja();
 		baraja.mezclar();
-		Blackjack bj = new Blackjack(player, apuestas, baraja);
+		Blackjack bj = new Blackjack(player, apuestas, baraja, d);
 		
 		//System.out.println("Nombre " + p[0].getNombre() + " Saldo " + p[0].getSaldo());
 		//Naipe n1 = new Naipe(2, 9);
