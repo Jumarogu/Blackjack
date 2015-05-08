@@ -15,11 +15,11 @@ public class Blackjack {
 	
 	public void repartirCartas(){
 	
-		for (int i = 0; i < p.length; i++){
+		for (int i = 0; i < this.p.length; i++){
 			for(int j = 0; j < 2 ; j++){
-				if(p[i]!= null){
+				if(this.p[i]!= null){
 					
-					p[i].recibirCartas(b.next());
+					this.p[i].recibirCartas(this.b.next());
 				}
 			}
 		}
@@ -37,7 +37,7 @@ public class Blackjack {
 		}else if (i== 3){
 			p[3].recibirCartas((b.next()));
 		}else if (i == 4){
-			d.recibirCartas(b.next());
+			this.d.recibirCartas(b.next());
 		}
 	}
 	
@@ -50,12 +50,11 @@ public class Blackjack {
 	}
 	
 	public boolean sePaso(int i){
-		
+		boolean b = true;
 		if (p[i].otraCarta()){
-			return false;
+			b = false;
 		}
-		return true;
-		
+		return b;
 	}
 	
 	public boolean otraCartaDealer(){

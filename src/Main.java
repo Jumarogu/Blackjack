@@ -51,20 +51,17 @@ public class Main {
 			
 			jugadorActual = 0;
 			
-			apuestas = new int [4];
 			for(int j = 0; j<numPlayers; j++){
-				apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog("Apuesta del jugador " + (j+1)));
+				apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog("Apuesta del jugador " + bj.getPlayer(j).getNombre()));
 				
-				while(apuestas[j]>player[j].getSaldo()){
-					apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog(" No tiene saldo disponible para realizar esa apuesta, introduzca una nueva " + (j+1)));
+				if(apuestas[j]>player[j].getSaldo()){
+					apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog(" No tiene saldo disponible para realizar esa apuesta, introduzca una nueva "));
 				}
-			}
-			
-			
+			}	
 			
 			while (jugadorActual<numPlayers){
 				
-				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + jugadorActual + " Diga si quiere otra carta");
+				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + bj.getPlayer(jugadorActual).getNombre() + " Diga si quiere otra carta");
 					
 				if(respuesta == JOptionPane.YES_OPTION){
 					bj.otraCarta(jugadorActual);
@@ -80,17 +77,14 @@ public class Main {
 					
 				}
 				else if (respuesta == JOptionPane.OK_CANCEL_OPTION){
-					respuesta = JOptionPane.showConfirmDialog(null, "Jugador: " + jugadorActual + " Diga si quiere otra carta");
+					respuesta = JOptionPane.showConfirmDialog(null, "Jugador: " + bj.getPlayer(jugadorActual).getNombre() + " Diga si quiere otra carta");
 				}
 				
-			}
-			
-			
+			}	
 			while(bj.otraCartaDealer()){
 				bj.otraCarta(4);
 				n.repaint();
 			}
-			
 			if(d.getTotal()>21){
 				d.perdioPartida(true);
 			}

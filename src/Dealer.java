@@ -55,7 +55,6 @@ public class Dealer extends Player {
 	}
 	
 	public void recibirCartas(Naipe n1){
-		
 		if(numeroCartas < 11){
 			juego[numeroCartas] = n1;
 			numeroCartas++;

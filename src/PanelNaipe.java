@@ -29,10 +29,8 @@ public class PanelNaipe extends JPanel{
 	}
 	public void pintaCarta(Graphics g){
 		int j = 0;
-		System.out.println("estoy en pinta carta");
 		if(!this.bool){
 			this.nuevoTablero(g);
-			System.out.println("lo intente");
 		}
 		
 		for (int i = 0; i < 4; i++) {
@@ -42,6 +40,16 @@ public class PanelNaipe extends JPanel{
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
 							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 205 + this.aumento, 407, null);
+							this.aumento += 10;
+							j++;
+						}
+					}
+					this.aumento = 20;
+					j = 0;
+					for (int k = 0; k < 4; k++) {
+						System.out.println("HOLA");
+						if(this.bj.getDealer().getJuego()[j] != null){
+							g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + this.aumento, 173, null);
 							this.aumento += 10;
 							j++;
 						}
@@ -82,16 +90,6 @@ public class PanelNaipe extends JPanel{
 					this.aumento = 20;
 				}
 			}
-			j = 0;
-			for (int k = 0; k < 4; k++) {
-				if(this.bj.getDealer().getJuego()[j] != null){
-					System.out.println("HOLA");
-					g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + this.aumento, 173, null);
-					this.aumento += 10;
-					j++;
-				}
-			}
-			this.aumento = 20;
 		}
 	}
 	public void setBoolean(boolean t){
