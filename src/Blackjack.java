@@ -47,10 +47,10 @@ public class Blackjack {
 		return this.p[i];
 	}
 	
-	public boolean sePaso(){
-		
-		
-		
-	}
+//	public boolean sePaso(){
+//		
+//		
+//		
+//	}
 }
 

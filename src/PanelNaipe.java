@@ -20,15 +20,19 @@ public class PanelNaipe extends JPanel{
 		super.paint(g);
 		g.drawImage(img, 0, 0, null);
 		this.imprimeTablero(g);
-		for (int i = 0; i < 4 ; i++) {
-			
-
-		}
 	}
 	public void imprimeTablero(Graphics g){
 //		if(this.bj.getPlayer(i) != null){	
 //			g.drawString(this.bj.getPlayer(i).getNombre(), 300, 300);
 //		}
 		g.fillOval(0,0, 100, 100);
+	}
+	public void pintaCarta(Graphics g){
+		for (int i = 0; i < 4; i++) {
+			if(bj.getPlayer(i) != null){
+				g.drawImage(bj.getPlayer(i).getJuego()[i].getImage(), 0, 0, null);
+				
+			}
+		}
 	}
 }
