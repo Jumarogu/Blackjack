@@ -27,9 +27,9 @@ public class PanelNaipe extends JPanel{
 		for (int i = 0; i < 4; i++) {
 			if(bj.getPlayer(i) != null){
 				if(i == 0){
+					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							j = 0;
 							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 205 + aumento, 407, null);
 							aumento += 10;
 							j++;
@@ -38,9 +38,9 @@ public class PanelNaipe extends JPanel{
 					aumento = 20;
 				}
 				else if(i == 1){
+					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							j = 0;
 							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 489 + aumento, 456, null);
 							aumento += 10;
 							j++;
@@ -49,9 +49,9 @@ public class PanelNaipe extends JPanel{
 					aumento = 20;
 				}
 				else if(i == 2){
+					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							j = 0;
 							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 811 + aumento, 468, null);
 							aumento += 10;
 							j++;
@@ -60,9 +60,9 @@ public class PanelNaipe extends JPanel{
 					aumento = 20;
 				}
 				else if(i == 3){
+					j = 0;
 					for (int k = 0; k < this.bj.getPlayer(i).getJuego().length; k++) {
 						if(this.bj.getPlayer(i).getJuego()[k] != null){
-							j = 0;
 							g.drawImage(this.bj.getPlayer(i).getJuego()[j].getImage(), 1116 + aumento, 410, null);
 							aumento += 10;
 							j++;

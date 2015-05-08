@@ -55,10 +55,10 @@ public class Main {
 				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + jugadorActual + " Diga si quiere otra carta");
 					
 				if(respuesta == JOptionPane.YES_OPTION){
-					bj.otraCarta(jugadorActual);	
+					bj.otraCarta(jugadorActual);
+					n.repaint();
 					if(bj.sePaso(jugadorActual)){
 						jugadorActual++;
-						n.repaint();
 					}
 					
 				}else if (respuesta == JOptionPane.NO_OPTION){
