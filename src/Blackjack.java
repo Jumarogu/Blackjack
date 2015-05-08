@@ -47,10 +47,21 @@ public class Blackjack {
 		return this.p[i];
 	}
 	
+<<<<<<< HEAD
 //	public boolean sePaso(){
 //		
 //		
 //		
 //	}
+=======
+	public boolean sePaso(int i){
+		
+		if (p[i].otraCarta()){
+			return false;
+		}
+		return true;
+		
+	}
+>>>>>>> origin/master
 }
 
