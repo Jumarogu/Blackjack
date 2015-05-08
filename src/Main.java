@@ -92,11 +92,13 @@ public class Main {
 					player[h].perdioPartida(apuestas[h]);
 					JOptionPane.showMessageDialog(null, " El jugador" + h + " perdio : " + apuestas[h]);
 
-				} else {
+				} else if(player[h].getTotal() == d.getTotal()){
 					player[h].ganoPartida(apuestas[h]);
-					JOptionPane.showMessageDialog(null, " El jugador" + h + "gano contra el dealer: " + apuestas[h]);
+					JOptionPane.showMessageDialog(null, "El jugador " + h + "empato contra el dealer: " + apuestas[h]);
 
-				}	
+				}else {
+					JOptionPane.showMessageDialog(null, "El jugador " + h + "empato contra el dealer: " + apuestas[h]);
+				}
 				
 			}
 			
