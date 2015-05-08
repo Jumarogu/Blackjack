@@ -3,9 +3,9 @@ import javax.swing.ImageIcon;
 
 public class Naipe{
 	
-	private String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
-	private String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
-	private Image[][] naipesImg = new Image[4][13];
+	private static final String[] valores = {"1","2","3","4","5","6","7","8","9","10","11","12","13"};
+	private static final String[] figuras = {"Corazon", "Diamante", "Trebol", "Picas"};
+	private static final Image[][] naipesImg = new Image[4][13];
 	private int figura;
 	private int valor;
 	
@@ -47,7 +47,7 @@ public class Naipe{
 		return v;
 	}
 	public Image getImage(){
-		System.out.println("Posicion del Naipe " + this.figuras[this.figura] + ", " + this.valor);
+		//System.out.println("Posicion del Naipe " + this.figuras[this.figura] + ", " + this.valor);
 		return this.naipesImg[this.figura][this.valor];
 	}
 	public int getValor(){

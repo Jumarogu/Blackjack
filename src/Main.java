@@ -59,6 +59,7 @@ public class Main {
 					bj.otraCarta(jugadorActual);	
 					if(bj.sePaso(jugadorActual)){
 						jugadorActual++;
+						n.repaint();
 					}
 					
 				}else if (respuesta == JOptionPane.NO_OPTION){

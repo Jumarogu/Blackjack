@@ -4,12 +4,12 @@ public class Blackjack {
 	private Dealer d;
 	private int[] apuesta; // aqui tengo las apuestas de todos los jugadores
 	private Baraja b;
+	
 	public Blackjack(Player[] p, int[] apuesta, Baraja b){
 		this.p = p;
 		this.b = b;
 		this.d = new Dealer();
 		this.apuesta = apuesta;
-	
 	}
 	
 	public void repartirCartas(){
@@ -22,11 +22,9 @@ public class Blackjack {
 				}
 			}
 		}
-		
 	}
 	
 	public void otraCarta(int i){
-		
 		if (i == 0){
 			p[0].recibirCartas(b.next());
 		}else if (i == 1){
@@ -38,7 +36,6 @@ public class Blackjack {
 		}else if (i== 3){
 			p[3].recibirCartas((b.next()));
 		}
-		
 	}
 	public Baraja getBaraja(){
 		return this.b;
@@ -47,13 +44,6 @@ public class Blackjack {
 		return this.p[i];
 	}
 	
-<<<<<<< HEAD
-//	public boolean sePaso(){
-//		
-//		
-//		
-//	}
-=======
 	public boolean sePaso(int i){
 		
 		if (p[i].otraCarta()){
@@ -62,6 +52,5 @@ public class Blackjack {
 		return true;
 		
 	}
->>>>>>> origin/master
 }
 
