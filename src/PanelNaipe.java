@@ -45,16 +45,7 @@ public class PanelNaipe extends JPanel{
 						}
 					}
 					this.aumento = 20;
-					j = 0;
-					for (int k = 0; k < 4; k++) {
-						System.out.println("HOLA");
-						if(this.bj.getDealer().getJuego()[j] != null){
-							g.drawImage(this.bj.getDealer().getJuego()[j].getImage(), 681 + this.aumento, 173, null);
-							this.aumento += 10;
-							j++;
-						}
-					}
-					this.aumento = 20;
+					this.pintaDealer(g);
 				}
 				else if(i == 1){
 					j = 0;
@@ -94,5 +85,15 @@ public class PanelNaipe extends JPanel{
 	}
 	public void setBoolean(boolean t){
 		this.bool = t;
+	}
+	public void pintaDealer(Graphics g){
+		for (int k = 0; k < 2; k++) {
+			//System.out.println(this.bj.getDealer().getJuego()[k].toString());
+			if(this.bj.getDealer().getJuego()[k] != null){
+				g.drawImage(this.bj.getDealer().getJuego()[k].getImage(), 681 + this.aumento, 173, null);
+				this.aumento += 10;
+			}
+		}
+		this.aumento = 20;
 	}
 }

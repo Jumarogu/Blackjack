@@ -11,8 +11,8 @@ public class Main {
 		int[] apuestas = new int[4];
 		int tope;
 		int masRicachon = 0;
-		int jugadorActual;
-		int respuesta, contador;
+		int jugadorActual, respuesta;
+		int contador = 0;
 		Dealer d = new Dealer();
 		numPlayers = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el numero de jugadores.", "1 - 4"));
 		tope = Integer.parseInt(JOptionPane.showInputDialog("El tope del juego "));
@@ -40,15 +40,12 @@ public class Main {
 		f.setVisible(true);
 		
 		while (masRicachon < tope){
-			contador = 0;
 			n.setBoolean(true);
 			if(contador == 3){
 				bj.mezclarBJ();
+				contador = 0;
 			}
-			bj.repartirCartas();
-			bj.otraCarta(4);
-			bj.otraCarta(4);
-			
+
 			jugadorActual = 0;
 			
 			for(int j = 0; j<numPlayers; j++){
@@ -58,7 +55,10 @@ public class Main {
 					apuestas[j] = Integer.parseInt(JOptionPane.showInputDialog(" No tiene saldo disponible para realizar esa apuesta, introduzca una nueva "));
 				}
 			}	
-			
+			bj.repartirCartas();
+			bj.otraCarta(4);
+			bj.otraCarta(4);
+			n.repaint();
 			while (jugadorActual<numPlayers){
 				
 				respuesta = JOptionPane.showConfirmDialog(null, " Jugador: " + bj.getPlayer(jugadorActual).getNombre() + " Diga si quiere otra carta");
@@ -80,41 +80,41 @@ public class Main {
 					respuesta = JOptionPane.showConfirmDialog(null, "Jugador: " + bj.getPlayer(jugadorActual).getNombre() + " Diga si quiere otra carta");
 				}
 				
-			}	
+			}
 			while(bj.otraCartaDealer()){
 				bj.otraCarta(4);
 				n.repaint();
 			}
-			if(d.getTotal()>21){
-				d.perdioPartida(true);
+			if(bj.getDealer().getTotal()>21){
+				bj.getDealer().perdioPartida(true);
 			}
 			
 			
 			for(int h = 0; h< numPlayers; h++ ){
 				
 				System.out.println("el total del jugador" + player[h].getTotal());
-				System.out.println(" el total del dealer" + d.getTotal());
-				
-				if(player[h].isBlackJack() && !d.isBlackJack()){
+				System.out.println(" el total del dealer" + bj.getDealer().getTotal());
+				System.out.println(d.getTotal());
+				if(player[h].isBlackJack() && !bj.getDealer().isBlackJack()){
 					player[h].ganoPartida(apuestas[h]);
 					
 					JOptionPane.showMessageDialog(null, " El jugador: " + h + " gano contra el dealer: " + apuestas[h]);
 					
 				}
 				
-				if(player[h].getTotal()> 21 && d.getPerdio()){
+				if(player[h].getTotal()> 21 && bj.getDealer().getPerdio()){
 					
 					player[h].empatoPartida(apuestas[h]);
-					JOptionPane.showMessageDialog(null, " El jugador" + h + " empato con el dealer : " + apuestas[h]);
+					JOptionPane.showMessageDialog(null, " El jugador " + h + " empato con el dealer : " + apuestas[h]);
 
-				} else if(player[h].getTotal() == d.getTotal()){
+				} else if(player[h].getTotal() == bj.getDealer().getTotal()){
 					player[h].ganoPartida(apuestas[h]);
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "empato contra el dealer: " + apuestas[h]);
 
-				}else if(player[h].getTotal() <= 21 && player[h].getTotal() > d.getTotal() && !d.getPerdio() ){
+				}else if(player[h].getTotal() <= 21 && player[h].getTotal() > bj.getDealer().getTotal() && !bj.getDealer().getPerdio() ){
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "gano contra el dealer: " + apuestas[h]);
 
-				}else if (d.getPerdio() && player[h].getTotal()<=21){
+				}else if (bj.getDealer().getPerdio() && player[h].getTotal()<=21){
 					JOptionPane.showMessageDialog(null, "El jugador " + h + "gano contra el dealer: " + apuestas[h]);
 
 				} else {
